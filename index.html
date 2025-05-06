@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="Rg5AUdeRESWK-fVZEQdypyHJtjYR_KgW4tPDoZmA9Zk" />
+  <meta name="keywords" content="​ashokachakravarthi,ashok,Ashok.Ashok Chakravarthi,chakravarthi Ashoka,ashoka chakrvarthi,kings,empire,ashok kingdom,Ashok Kingdom">
+  <title>Student Portfolio</title>
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <!-- AOS Animations -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <style>
+    :root {
+      --accent-primary: #2563eb;
+      --accent-secondary: #f97316;
+      --bg-gradient-start: #f0f4f8;
+      --bg-gradient-end: #e2e8f0;
+      --text-primary: #1f2937;
+      --footer-bg: #1e293b;
+      --footer-text: #f1f5f9;
+    }
+    body {
+      background: linear-gradient(45deg, var(--bg-gradient-start), var(--bg-gradient-end));
+      color: var(--text-primary);
+      transition: background 0.5s, color 0.5s;
+    }
+    .dark body {
+      background: linear-gradient(45deg, #1e293b, #0f172a);
+      color: var(--footer-text);
+    }
+    nav { background: var(--section-bg); position: sticky; top: 0; z-index: 10; }
+    nav ul { display: flex; justify-content: center; gap: 1.5rem; padding: 1rem; }
+    nav a { color: var(--text-primary); font-weight: 500; transition: color 0.3s; }
+    nav a:hover { color: var(--accent-primary); }
+
+    /* Header with dual mixing color below */
+    header { background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); position: relative; }
+    header::after { content: ''; display: block; height: 60px; background: linear-gradient(90deg, var(--accent-secondary) 0%, var(--accent-primary) 100%); position: absolute; bottom: -60px; left: 0; right: 0; }
+    header img { width: 160px; height: 160px; border-radius: 50%; border: 5px solid var(--accent-secondary); animation: pulse 3s infinite; }
+    @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+    /* Sections styling */
+    section { padding: 3rem 1rem; margin-top: 80px; background: linear-gradient(to right, rgba(255,255,255,0.8), rgba(255,255,255,0.5)); border-radius: 1rem; }
+    .dark section { background: linear-gradient(to right, rgba(30,41,59,0.8), rgba(30,41,59,0.5)); }
+
+    /* Card tweaks */
+    .card { background: var(--bg-gradient-start); border-left: 4px solid var(--accent-primary); padding: 2rem; border-radius: 0.75rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.5s ease, box-shadow 0.5s ease; }
+    .dark .card { background: #1e293b; border-color: var(--accent-secondary); }
+    .card:hover { transform: scale(1.03); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+
+    /* Modal pop-up animation */
+    .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); align-items: center; justify-content: center; }
+    .modal.active { display: flex; }
+    .modal-content { width: 500px; height: 500px; background: white; border-radius: 1rem; overflow: hidden; animation: popIn 0.4s ease-out; display: flex; align-items: center; justify-content: center; }
+    @keyframes popIn { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+    .modal-content img { width: 100%; height: 100%; object-fit: contain; }
+
+    /* Footer */
+    footer { background: var(--footer-bg); color: var(--footer-text); text-align: center; padding: 2rem 1rem; margin-top: 4rem; }
+
+    /* Social icon animations */
+    .social-icon { width: 36px; height: 36px; transition: transform 0.4s ease, fill 0.4s ease; }
+    .social-icon:hover { transform: rotate(360deg) scale(1.2); }
+  </style>
+</head>
+<body class="font-sans leading-relaxed">
+  <!-- Theme Toggle -->
+  <button id="themeToggle" class="fixed top-6 right-6 bg-accent-primary text-white p-3 rounded-full shadow-lg hover:bg-accent-secondary transition">🌙</button>
+
+  <!-- Header -->
+  <header class="text-center py-16 shadow-lg" data-aos="fade-right" data-aos-duration="1200">
+    <img src="ashok_me.jpg" alt="Profile Photo" class="mx-auto" />
+    <h1 class="text-5xl font-bold mt-6 text-white">Penumaka Ashok Chakravarthi</h1>
+    <p class="text-xl text-white opacity-80 mt-2">Software Developer | Devops Engineer | FullStack Developer</p>
+    <div class="flex justify-center space-x-8 mt-8" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+      <!-- GitHub -->
+      <!--<a href="" target="_blank" aria-label="GitHub">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/github.svg" class="social-icon" alt="GitHub" />
+      </a>-->
+      <!-- Gmail -->
+      <a href="mailto:youremail@example.com" aria-label="Email">
+        <span class="material-icons social-icon">email</span>
+      </a>
+      <!-- Phone -->
+      <a href="tel:+919618320273" aria-label="Phone">
+        <span class="material-icons social-icon">phone</span>
+      </a>
+      <!-- LinkedIn 
+      <a href="https://www.linkedin.com/in/yourprofile/" target="_blank" aria-label="LinkedIn">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/linkedin.svg" class="social-icon" alt="LinkedIn" />
+      </a>--><a href="https://www.linkedin.com/in/penumaka-ashok-chakravarthi-b94071213/" target="_blank" title="LinkedIn Profile">
+        <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5V24H0V8zm7.5 0h4.78v2.29h.07c.66-1.24 2.27-2.54 4.68-2.54C22.4 7.75 24 10.2 24 14.16V24h-5V15.13c0-2.12-.04-4.85-3-4.85-3 0-3.46 2.34-3.46 4.7V24h-5V8z"/>
+        </svg>
+      </a>
+      <a href="https://github.com/PenumakaAshokChakravarthi" target="_blank" title="GitHub Profile">
+        <svg class="w-8 h-8 text-gray-800" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.263.82-.582 0-.287-.01-1.047-.015-2.054-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.807 1.304 3.492.997.107-.775.42-1.305.763-1.605-2.665-.3-5.466-1.334-5.466-5.933 0-1.31.468-2.38 1.236-3.22-.123-.303-.536-1.522.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.003-.403 1.02.004 2.047.137 3.006.403 2.29-1.552 3.295-1.23 3.295-1.23.655 1.654.243 2.873.12 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.807 5.63-5.48 5.92.43.37.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .322.217.698.825.58C20.565 21.797 24 17.298 24 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#Skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="ashok_mydigital_resume.html" target="_blank" title="Download Resume"><span class="material-icons">description</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- Main -->
+  <main class="px-4 md:px-8 lg:px-16">
+    <section id="about" data-aos="zoom-in" data-aos-duration="800">
+      <h2 class="text-3xl font-semibold text-accent-primary mb-4"style="text-align:center">About Me</h2>
+      <p class="max-w-3xl mx-auto text-lg">I am a passionate Computer Science student specializing in web development and data science.</p>
+    </section>
+    <section id="education" data-aos="fade-up" data-aos-delay="200">
+      <h2 class="text-3xl font-semibold text-accent-primary mb-4 text-center">Education</h2>
+      <div class="max-w-3xl mx-auto space-y-8">
+        <div class="card">
+          <h3 class="text-2xl font-bold mb-2">B.Tech, Computer Science and Engineering</h3>
+          <p class="text-lg">Vignan's Lara Institute Of Technology & Science, 2020 - 2024</p>
+        </div>
+        <div class="card">
+          <h3 class="text-2xl font-bold mb-2">XII College-MPC</h3>
+          <p class="text-lg">Sri Chaitanya Junior College, 2018 - 2020</p>
+        </div>
+        <div class="card">
+          <h3 class="text-2xl font-bold mb-2">School 10 th </h3>
+          <p class="text-lg">ZPHS, 2017 - 2018</p>
+        </div>
+      </div>
+    </section>
+    <section id="Skills" data-aos="flip-up" data-aos-duration="800">
+      <h2 class="text-3xl font-semibold text-accent-primary mb-8 text-center">Skills</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="card"><h3 class="text-xl font-bold mb-4">Machine Learning ,Ai</h3></div>
+        <div class="card"><h3 class="text-xl font-bold mb-4">HTML, CSS, JavaScript</div>
+        <div class="card"><h3 class="text-xl font-bold mb-4">Python, SQL, OpenCV</h3></div>
+        <div class="card"><h3 class="text-xl font-bold mb-4">Scikit-learn, TensorFlow</h3></div>
+        <div class="card"><h3 class="text-xl font-bold mb-4">GitHub, Git</h3></div>
+        <div class="card"><h3 class="text-xl font-bold mb-4">Responsive Design, UX Principles</div>
+      </div>
+    </section>
+
+    <section id="projects" data-aos="flip-up" data-aos-duration="800">
+      <h2 class="text-3xl font-semibold text-accent-primary mb-8 text-center">Projects</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="card"><h3 class="text-xl font-bold mb-4">Farm Service Booking</h3>
+          <p>
+            <li>A farm service booking website connects farmers, workers, and service provide.</li>
+            <li>Developed a communication platform for farmers to book machinery services.</li>
+            <li>Engineered responsive web applications using HTML, CSS, and JavaScript that improved site load times by 30%, leading to increased farmer registrations on the booking website in just two months.</li>
+           </p>
+        </div>
+        <div class="card"><h3 class="text-xl font-bold mb-4">Learnerslive</h3>
+          <a href="https://learnerslive.netlify.app/">click the project link</a>
+          <p>
+            <li>Learner's website designed for academic success.</li>
+            <li>Developed a website providing educational resources for students</li>
+            <li>Focus on updates and information about events relevant to students.</li>
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="text-xl font-bold mb-4">Web Mining to Detect Online Spread of Terrorism</h3>
+          <p>
+            <li>The project aimed at detecting the online spread of terrorism through web mining.</li>
+            <li>Analyzed web data to differentiate legitimate sites from terrorist-linked sites.</li>
+            <li>Implemented machine learning algorithms for pattern recognition </li>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements" data-aos="flip-down" data-aos-duration="800">
+      <h2 class="text-3xl font-semibold text-accent-primary mb-8 text-center">Achievements</h2>
+      <ul class="list-disc list-inside space-y-4 max-w-2xl mx-auto">
+        <li>Achieved a global ranking of 702 in TCS CODEVITA Season 11.</li>
+        <li>Achieved first place in the KIMO challenge and received a cash prize of 15,000.</li>
+        <li>Led a project presentation at the UDBHAV national expo event, showcasing innovative solutions to over 200 attendees and receiving positive feedback on research findings addressing key youth challenges in technology utilization.</li>
+      </ul>
+    </section>
+
+    <section id="certifications" data-aos="fade-up" data-aos-duration="800">
+      <h2 class="text-3xl font-semibold text-accent-primary mb-8 text-center">Certifications</h2>
+      <div class="flex flex-wrap justify-center gap-8">
+        <div class="cursor-pointer" data-img="Programming In Java.jpg" data-aos="zoom-out" data-aos-duration="600"><img src="Programming In Java.jpg" alt="Cert 1" class="w-28 h-28 rounded-full border-4 border-accent-primary hover:scale-110 transition" /></div>
+        <div class="cursor-pointer" data-img="Cloud computing.jpg" data-aos="zoom-out" data-aos-duration="600" data-aos-delay="200"><img src="Cloud computing.jpg" alt="Cert 2" class="w-28 h-28 rounded-full border-4 border-accent-primary hover:scale-110 transition" /></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer data-aos="fade-up" data-aos-duration="800">
+    <p>Connect with me:</p>
+    <div class="flex justify-center space-x-6 mt-4">
+      <a href="https://www.linkedin.com/in/penumaka-ashok-chakravarthi-b94071213/" target="_blank" title="LinkedIn Profile">
+        <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5V24H0V8zm7.5 0h4.78v2.29h.07c.66-1.24 2.27-2.54 4.68-2.54C22.4 7.75 24 10.2 24 14.16V24h-5V15.13c0-2.12-.04-4.85-3-4.85-3 0-3.46 2.34-3.46 4.7V24h-5V8z"/>
+        </svg>
+      </a>
+      <a href="https://github.com/PenumakaAshokChakravarthi" target="_blank" title="GitHub Profile">
+        <svg class="w-8 h-8 text-gray-800" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.263.82-.582 0-.287-.01-1.047-.015-2.054-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.807 1.304 3.492.997.107-.775.42-1.305.763-1.605-2.665-.3-5.466-1.334-5.466-5.933 0-1.31.468-2.38 1.236-3.22-.123-.303-.536-1.522.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.003-.403 1.02.004 2.047.137 3.006.403 2.29-1.552 3.295-1.23 3.295-1.23.655 1.654.243 2.873.12 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.807 5.63-5.48 5.92.43.37.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .322.217.698.825.58C20.565 21.797 24 17.298 24 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+      </a>
+      <a href="mailto:chakravarthiai@gmail.com"><span class="material-icons social-icon">email</span></a>
+      <a href="tel:+919618320273"><span class="material-icons social-icon">phone</span></a>
+    </div>
+    <p class="mt-4 text-sm">&copy; 2025 Your Name. All rights reserved.</p>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" onclick="this.classList.remove('active')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <img id="modalImg" src="Cloud computing.jpg" alt="Certification Full" />
+    </div>
+  </div>
+  <div id="modal" class="modal" onclick="this.classList.remove('active')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <img id="modalImg" src="Cloud computing.jpg" alt="Certification Full" />
+    </div>
+  </div>
+
+  <script>
+    AOS.init({ duration: 1000, once: true });
+    document.getElementById('themeToggle').onclick = function() {
+      document.documentElement.classList.toggle('dark'); this.textContent = this.textContent === '🌙' ? '☀️' : '🌙';
+    };
+    document.querySelectorAll('[data-img]').forEach(el => el.onclick = () => {
+      document.getElementById('modalImg').src = el.getAttribute('data-img'); document.getElementById('modal').classList.add('active');
+    });
+  </script>
+</body>
+</html>
